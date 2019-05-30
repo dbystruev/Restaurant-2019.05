@@ -19,15 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" id="4VG-mL-qVp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryCell" textLabel="Pcr-eN-zlS" style="IBUITableViewCellStyleDefault" id="4VG-mL-qVp">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4VG-mL-qVp" id="xvn-Bg-nna">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pcr-eN-zlS">
+                                            <rect key="frame" x="20" y="0.0" width="356" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="pGD-UW-Dra" kind="show" id="BU0-90-KIL"/>
+                                    <segue destination="pGD-UW-Dra" kind="show" identifier="MenuSegue" id="BU0-90-KIL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -115,15 +124,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mealCell" id="iVg-9L-gKS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealCell" textLabel="nOM-Ob-2Xn" detailTextLabel="izX-qA-8A0" style="IBUITableViewCellStyleSubtitle" id="iVg-9L-gKS">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iVg-9L-gKS" id="W6T-vD-aDY">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nOM-Ob-2Xn">
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="izX-qA-8A0">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ILY-hc-SaR" kind="show" id="6aR-VE-fm9"/>
+                                    <segue destination="ILY-hc-SaR" kind="show" identifier="ItemDetailSegue" id="6aR-VE-fm9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -138,16 +163,69 @@
             </objects>
             <point key="canvasLocation" x="3913.04347826087" y="-216.29464285714286"/>
         </scene>
-        <!--Menu Item Detail View Controller-->
+        <!--$9.00-->
         <scene sceneID="j6q-HV-WPU">
             <objects>
                 <viewController id="ILY-hc-SaR" customClass="MenuItemDetailViewController" customModule="Restaurant_2019_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QuO-Zp-W7W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="98C-xm-FYo">
+                                <rect key="frame" x="20" y="160" width="374" height="633"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MargheritaPizza" translatesAutoresizingMaskIntoConstraints="NO" id="gD1-Kh-OOA">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="306.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-Z7-OLG">
+                                        <rect key="frame" x="0.0" y="326.5" width="374" height="306.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Grilled Steelhead Trout Sandwich" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfA-ca-u1A">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="95.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmN-Ri-Tfe">
+                                                <rect key="frame" x="0.0" y="95.5" width="374" height="163"/>
+                                                <string key="text">Stewed sliced beef with yellow onions and garlic in a vinegar-soy sauce. Served with steamed jasmine rice and sautÃ©ed vegetables.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6P-e3-yWA">
+                                                <rect key="frame" x="0.0" y="258.5" width="374" height="48"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Add to Order">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="orderButtonPressed:" destination="ILY-hc-SaR" eventType="touchUpInside" id="0KB-MJ-Usr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fSE-20-V4w" firstAttribute="trailing" secondItem="98C-xm-FYo" secondAttribute="trailing" constant="20" id="Oew-oE-HhJ"/>
+                            <constraint firstItem="98C-xm-FYo" firstAttribute="top" secondItem="fSE-20-V4w" secondAttribute="top" constant="20" id="abd-va-xBh"/>
+                            <constraint firstItem="98C-xm-FYo" firstAttribute="leading" secondItem="fSE-20-V4w" secondAttribute="leading" constant="20" id="uR4-Vy-Ytl"/>
+                            <constraint firstItem="fSE-20-V4w" firstAttribute="bottom" secondItem="98C-xm-FYo" secondAttribute="bottom" constant="20" id="x3W-6F-fh8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fSE-20-V4w"/>
                     </view>
+                    <navigationItem key="navigationItem" title="$9.00" id="hcR-4b-sN8"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="qmN-Ri-Tfe" id="fAa-gh-t7d"/>
+                        <outlet property="imageView" destination="gD1-Kh-OOA" id="zNM-z1-LXy"/>
+                        <outlet property="nameLabel" destination="DfA-ca-u1A" id="dPM-eX-LYT"/>
+                        <outlet property="orderButton" destination="i6P-e3-yWA" id="17q-6M-Kqb"/>
+                        <outlet property="topStackView" destination="98C-xm-FYo" id="vXQ-Ky-mCE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufr-XD-M1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,6 +256,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NCG-9f-3GE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="grY-gc-Nur">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -192,6 +271,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MargheritaPizza" width="540" height="540"/>
         <image name="menu" width="25" height="25"/>
         <image name="order" width="25" height="25"/>
     </resources>

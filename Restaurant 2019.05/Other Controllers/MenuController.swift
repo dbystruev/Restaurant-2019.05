@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MenuController {
+final class MenuController {
     let baseURL = URL(string: "http://server.getoutfit.ru:8090/")!
     
     func fetchCategories(completion: @escaping ([String]?) -> Void) {

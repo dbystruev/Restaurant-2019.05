@@ -9,31 +9,52 @@
 import UIKit
 
 class CategoryTableViewController: UITableViewController {
+    
+    // MARK: Properties
+    let cellController = CellController()
+    let menuController = MenuController()
+    var categories = [String]()
+    
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
-        let menuController = MenuController()
-        
         super.viewDidLoad()
         menuController.fetchCategories { categories in
-            print(#line, #function, categories ?? [])
-            
-            var menuIds = [Int]()
-            
-            for category in categories ?? [] {
-                menuController.fetchMenuItems(forCategory: category) { items in
-                    print(#line, #function, items ?? [])
-                    menuIds += (items ?? []).map { $0.id }
-                    
-                    if category == categories?.last {
-                        print(#line, #function, menuIds)
-                        menuController.submitOrder(forMenuIDs: menuIds) { preparationTime in
-                            print(#line, #function, preparationTime ?? 0)
-                        }
-                    }
-                }
+            guard let categories = categories else {
+                print(#line, #function, "Can't load the list of categories")
+                return
             }
-            
-            
+            self.updateUI(with: categories)
         }
-        
+    }
+    
+    // MARK: - UI Methods
+    func updateUI(with categories: [String]) {
+        DispatchQueue.main.async {
+            self.categories = categories
+            self.tableView.reloadData()
+        }
+    }
+}
+
+// MARK: - Navigation
+extension CategoryTableViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "MenuSegue" else { return }
+        guard let index = tableView.indexPathForSelectedRow else { return }
+        let destination = segue.destination as! MenuTableViewController
+        destination.category = categories[index.row]
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension CategoryTableViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categories.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell")!
+        cellController.configure(cell, with: categories[indexPath.row])
+        return cell
     }
 }
