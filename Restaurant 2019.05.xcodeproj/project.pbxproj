@@ -24,6 +24,8 @@
 		6995CD5C229C555A009C1BC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6995CD5A229C555A009C1BC3 /* Main.storyboard */; };
 		6995CD5E229C5567009C1BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6995CD5D229C5567009C1BC3 /* Assets.xcassets */; };
 		6995CD61229C5567009C1BC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6995CD5F229C5567009C1BC3 /* LaunchScreen.storyboard */; };
+		69C11AC022A5908300EFA95C /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C11ABF22A5908300EFA95C /* OrderTableViewController.swift */; };
+		69C11AC222A5964C00EFA95C /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C11AC122A5964C00EFA95C /* OrderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		6995CD5D229C5567009C1BC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6995CD60229C5567009C1BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6995CD62229C5567009C1BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69C11ABF22A5908300EFA95C /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		69C11AC122A5964C00EFA95C /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				6987B4A622A04B6200D9AC17 /* CellController.swift */,
 				69887B8B22A05D2C00F9195F /* FontManager.swift */,
 				69401035229C63DE00DC637D /* MenuController.swift */,
+				69C11AC122A5964C00EFA95C /* OrderController.swift */,
 			);
 			path = "Other Controllers";
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 				69640640229C5BC4006110CD /* CategoryTableViewController.swift */,
 				69640642229C5BE7006110CD /* MenuTableViewController.swift */,
 				69640644229C5C75006110CD /* MenuItemDetailViewController.swift */,
+				69C11ABF22A5908300EFA95C /* OrderTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -235,7 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69C11AC222A5964C00EFA95C /* OrderController.swift in Sources */,
 				69401036229C63DE00DC637D /* MenuController.swift in Sources */,
+				69C11AC022A5908300EFA95C /* OrderTableViewController.swift in Sources */,
 				6995CD57229C555A009C1BC3 /* AppDelegate.swift in Sources */,
 				69887B8C22A05D2C00F9195F /* FontManager.swift in Sources */,
 				6940102F229C620A00DC637D /* Categories.swift in Sources */,

@@ -38,6 +38,7 @@ extension MenuItemDetailViewController {
             sender.transform = CGAffineTransform(scaleX: 3, y: 3)
             sender.transform = CGAffineTransform.identity
         }
+        OrderController.shared.order.menuItems.append(menuItem)
     }
 }
 

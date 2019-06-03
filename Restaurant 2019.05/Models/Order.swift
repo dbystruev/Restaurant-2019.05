@@ -6,8 +6,16 @@
 //  Copyright © 2019 Denis Bystruev. All rights reserved.
 //
 
-struct Order: Codable {
-    var menuItems: [MenuItem] = []
+import Foundation
+
+final class Order: Codable {
+    var menuItems: [MenuItem] = [] {
+        didSet {
+            NotificationCenter.default.post(name: Order.orderUpdateNotification, object: nil)
+        }
+    }
+    
+    static let orderUpdateNotification = Notification.Name("Order.orderUpdated")
     
     init(menuItems: [MenuItem] = []) {
         self.menuItems = menuItems
