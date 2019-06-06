@@ -9,6 +9,8 @@
 import UIKit
 
 final class CellController {
+    let menuController = MenuController()
+    
     func configure(_ cell: UITableViewCell, with category: String) {
         cell.textLabel?.text = category.capitalized(with: Locale.current)
     }
@@ -16,5 +18,10 @@ final class CellController {
     func configure(_ cell: UITableViewCell, with menuItem: MenuItem) {
         cell.textLabel?.text = menuItem.name
         cell.detailTextLabel?.text = String(format: "$%.2f", menuItem.price)
+        menuController.fetchImage(url: menuItem.imageURL) { image in
+            DispatchQueue.main.async {
+                cell.imageView?.image = image
+            }
+        }
     }
 }

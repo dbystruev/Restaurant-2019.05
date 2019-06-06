@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		693DAB6322A989B6009430E2 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693DAB6222A989B6009430E2 /* OrderConfirmationViewController.swift */; };
 		6940102D229C617800DC637D /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6940102C229C617800DC637D /* MenuItems.swift */; };
 		6940102F229C620A00DC637D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6940102E229C620A00DC637D /* Categories.swift */; };
 		69401031229C625000DC637D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69401030229C625000DC637D /* Order.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		693DAB6222A989B6009430E2 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		6940102C229C617800DC637D /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		6940102E229C620A00DC637D /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		69401030229C625000DC637D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				69640642229C5BE7006110CD /* MenuTableViewController.swift */,
 				69640644229C5C75006110CD /* MenuItemDetailViewController.swift */,
 				69C11ABF22A5908300EFA95C /* OrderTableViewController.swift */,
+				693DAB6222A989B6009430E2 /* OrderConfirmationViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				69640645229C5C75006110CD /* MenuItemDetailViewController.swift in Sources */,
 				69401033229C631B00DC637D /* PreparationTime.swift in Sources */,
 				69640648229C5D0F006110CD /* MenuItem.swift in Sources */,
+				693DAB6322A989B6009430E2 /* OrderConfirmationViewController.swift in Sources */,
 				6940102D229C617800DC637D /* MenuItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

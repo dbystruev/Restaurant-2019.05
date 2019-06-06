@@ -6,7 +6,7 @@
 //  Copyright © 2019 Denis Bystruev. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class MenuController {
     let baseURL = URL(string: "http://server.getoutfit.ru:8090/")!
@@ -21,6 +21,27 @@ final class MenuController {
             let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
             let categories = jsonDictionary?["categories"] as? [String]
             completion(categories)
+        }
+        task.resume()
+    }
+    
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+        let baseURLComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        components?.host = baseURLComponents.host
+        guard let url = components?.url else {
+            completion(nil)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            let image = UIImage(data: data)
+            completion(image)
+            return
         }
         task.resume()
     }

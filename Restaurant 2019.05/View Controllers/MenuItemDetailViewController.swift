@@ -18,6 +18,7 @@ class MenuItemDetailViewController: UIViewController {
     
     // MARK: - Properties
     var menuItem: MenuItem!
+    let menuController = MenuController()
     
     // MARK: - UIViewController Methods
     override func viewDidLoad() {
@@ -51,6 +52,11 @@ extension MenuItemDetailViewController {
         navigationItem.title = String(format: "$%.2f", menuItem.price)
         orderButton.layer.cornerRadius = 10
         updateTopStackView(with: view.bounds.size)
+        menuController.fetchImage(url: menuItem.imageURL) { image in
+            DispatchQueue.main.async {
+                self.imageView.image = image
+            }
+        }
     }
     
     func updateTopStackView(with size: CGSize) {
